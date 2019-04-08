@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 const Header = (props) => {
   const { textStyle, viewStyle} = styles;
   return (
-    <View styles={viewStyle}>
-      <Text styles={textStyle}>{props.headerText}</Text>
+    <View style={viewStyle}>
+      <Text style={textStyle}>{props.headerText}</Text>
     </View>
   );
 };
@@ -18,10 +18,10 @@ const styles = {
     height: 60,
     paddingTop: 12,
     elevation: 6,
-    color: '#fff'
   },
   textStyle: {
-    fontSize: 20
+    fontSize: 20,
+    color: '#fff'
   }
 }
 
