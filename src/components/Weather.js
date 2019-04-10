@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
 class Weather extends Component {
-  render(props) {
+  componentWillMount() {
+    console.log('Testing message');
+  }
+
+  render() {
     state = { weather: [] }
 
     return (
