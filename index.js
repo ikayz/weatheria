@@ -6,7 +6,6 @@ const App = () => {
     return (
       <View>
         <Header headerText={'Weatharia'}/>
-        <Text>Welcome to weatheria</Text>
       </View>
     );
 };
