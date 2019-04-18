@@ -4,22 +4,22 @@ import PropTypes from 'prop-types';
 
 class Search extends Component {
   state = {
-    text: ""
+    text: "",
   }
 
-  handleText = text => {
+  handleChangeText = text => {
     this.setState({text});
     console.log(this.state);
   }
 
-  submitEdit = () => {
+  handleSubmitEditing = () => {
     const {onSubmit} = this.props;
     const {text} = this.state;
 
     if (!text) return;
 
     onSubmit(text);
-    thi.setState({text:''});
+    this.setState({text: ''});
   }
 
   render() {
@@ -34,8 +34,8 @@ class Search extends Component {
           placeholderTextColor="black"
           underlineColorAndroid="transparent"
           style={styles.textInput}
-          onChangeText={this.handleText}
-          onSubmitEditing={this.submitEdit}
+          onChangeText={this.handleChangeText}
+          onSubmitEditing={this.handleSubmitEditing}
         />
       </View>
     )
@@ -52,7 +52,7 @@ class Search extends Component {
     },
     textInput: {
       flex: 1,
-      color: 'white'
+      color: 'black'
     }
   });
 

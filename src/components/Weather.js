@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
+// import Search from './Search';
 
 class Weather extends Component {
   componentWillMount() {
@@ -12,6 +13,7 @@ class Weather extends Component {
     return (
       <View>
         <Text>Welcome to weatheria</Text>
+        {/* <Search placeholder="Search city"/> */}
       </View>
     )
   }
