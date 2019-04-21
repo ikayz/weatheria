@@ -4,18 +4,26 @@ import axios from 'axios';
 // import OPENWEATHER_API from '../config';
 
 class Weather extends Component {
-  state = { weather: [] };
+  state = { weather: [], name: '' };
 
-  componentWillMount() {
+  componentDidMount() {
     axios.get('http://api.openweathermap.org/data/2.5/weather?q=Berlin&APPID=dc6267c2fdea4f59377f61f4b6a2c91a')
-      .then(response => this.setState({ weather: response.data }));
+      .then(response => {
+        const weather = response.data.weather.map(obj => ({ name: obj.name, description: obj.description }));
+        this.setState({ weather });
+      });
+  }
+
+  renderWeather() {
+    return this.state.weather.map((weather, index) => ( <Text key={index}>{weather.description}</Text>));
   }
 
   render() {
     console.log(this.state);
     return (
       <View>
-        <Text>Welcome to weatheria</Text>
+        {this.renderWeather()}
+        <Text>Test</Text>
       </View>
     );
   }
