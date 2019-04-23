@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 const Card = (props) => {
     return (
-        <View style="styles.cardStyle">
+        <View style={styles.cardStyle}>
             {props.children}
         </View>
     );
@@ -14,7 +14,7 @@ const styles = {
         borderWidth: 1,
         borderRadius: 3,
         borderColor: '#eee',
-        borderBottomWidth:0,
+        borderBottomWidth: 0,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.1,
