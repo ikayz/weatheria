@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import Card from './Card';
+import CardSection from './CardSection';
 
-const WeatherDetails = () => {
+const WeatherDetails = (props) => {
     return (
         <View>
-            <Text></Text>
+            <Text>{props.}</Text>
         </View>
     );
 };
