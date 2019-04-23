@@ -13,7 +13,7 @@ const styles = {
     cardSectionStyles: {
         borderBottomWidth: 1,
         padding: 5,
-        backgroundColor: '#fff',
+        backgroundColor: '#ffe',
         justifyContent: 'flex-start',
         flexDirection: 'row',
         borderColor: '#fff',

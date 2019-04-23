@@ -25,7 +25,12 @@ const WeatherDetails = (props) => {
                 <View style={headerContent}>
                     <Text style={headerText}>{props.list.weather[0].main}</Text>
                     <Text>{props.list.weather[0].description}</Text>
+                    <Text>Humidity: {props.list.main.humidity}</Text>
+                    <Text>Temp: {props.list.main.temp} &#8451;</Text>
                 </View>
+            </CardSection>
+            <CardSection>
+                <Image style={imageStyle} source={{uri:"https://res.cloudinary.com/ikayz/image/upload/v1556055037/weather.jpg" }}/>
             </CardSection>
         </Card>
     );
