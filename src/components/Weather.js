@@ -4,30 +4,30 @@ import axios from 'axios';
 // import OPENWEATHER_API from '../config';
 
 class Weather extends Component {
-  state = { weather: [], city: '', };
+  state = { list: [] };
 
   componentDidMount() {
-    axios.get('http://api.openweathermap.org/data/2.5/weather?q=Berlin&APPID=dc6267c2fdea4f59377f61f4b6a2c91a')
+    axios.get('http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=dc6267c2fdea4f59377f61f4b6a2c91a')
       .then(response => {
-        this.setState({ city: response.data.name, weather: response.data.weather });
+        this.setState({ list: response.data.list });
       })
       .catch(error => {
         console.log(error);
       });
   }
 
-  // renderWeather() {
-  //   return this.state.weather.map((weather, index) => ( <Text key={index}>{weather.description}</Text>));
-  // }
+  renderWeather() {
+    return this.state.list.map(list => ( <Text >{list.weather[0].main}</Text>));
+  }
 
   render() {
     // console.log(this.state);
-    const { city, weather } = this.state;
+    // const { city, weather } = this.state;
     return (
       <View>
-        {/* {this.renderWeather()} */}
-        <Text>{city}</Text>
-        <Text>{weather.description}</Text>
+        {this.renderWeather()}
+        {/* <Text>{city}</Text> */}
+        {/* <Text>{weather.description}</Text> */}
       </View>
     );
   }
