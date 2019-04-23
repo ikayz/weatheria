@@ -4,10 +4,6 @@ import Card from './Card';
 import CardSection from './CardSection';
 
 const WeatherDetails = (props) => {
-    // const {
-    //     weather: [{ main, description, icon }],
-    // } = list;
-
     const {
         iconContainer,
         headerContent,
@@ -26,7 +22,7 @@ const WeatherDetails = (props) => {
                     <Text style={headerText}>{props.list.weather[0].main}</Text>
                     <Text>{props.list.weather[0].description}</Text>
                     <Text>Humidity: {props.list.main.humidity}</Text>
-                    <Text>Temp: {props.list.main.temp} &#8451;</Text>
+                    <Text>Temp: {props.list.main.temp}&#8451;</Text>
                 </View>
             </CardSection>
             <CardSection>
