@@ -1,30 +1,32 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
-// import OPENWEATHER_API from '../config';
+import WeatherDetails from './WeatherDetails';
 
 class Weather extends Component {
-  state = { weather: [], name: '' };
+  state = { forecast: [], location: '' };
 
   componentDidMount() {
-    axios.get('http://api.openweathermap.org/data/2.5/weather?q=Berlin&APPID=dc6267c2fdea4f59377f61f4b6a2c91a')
+    axios.get('http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=dc6267c2fdea4f59377f61f4b6a2c91a')
       .then(response => {
-        const weather = response.data.weather.map(obj => ({ name: obj.name, description: obj.description }));
-        this.setState({ weather });
+        this.setState({ forecast: response.data.list, location: response.data });
+      })
+      .catch(error => {
+        console.log(error);
       });
   }
 
   renderWeather() {
-    return this.state.weather.map((weather, index) => ( <Text key={index}>{weather.description}</Text>));
+    return this.state.forecast.map(lists =>
+      <WeatherDetails key={lists.dt} list={lists} />
+    );
   }
 
   render() {
-    console.log(this.state);
     return (
-      <View>
+      <ScrollView>
         {this.renderWeather()}
-        <Text>Test</Text>
-      </View>
+      </ScrollView>
     );
   }
 }
