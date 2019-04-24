@@ -30,7 +30,7 @@ const WeatherDetails = (props) => {
                     <Text>{props.list.weather[0].description}</Text>
                     <Text>Humidity: {props.list.main.humidity}</Text>
                     <Text>Temp: {props.list.main.temp}&#8451;</Text>
-                    <Text>{time} hours</Text>
+                    <Text>{time} hrs</Text>
                 </View>
             </CardSection>
             <CardSection>
