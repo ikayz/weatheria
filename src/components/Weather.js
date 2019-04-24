@@ -7,7 +7,7 @@ class Weather extends Component {
   state = { forecast: [], location: '' };
 
   componentDidMount() {
-    axios.get('http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=dc6267c2fdea4f59377f61f4b6a2c91a')
+    axios.get('http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&units=metric&appid=dc6267c2fdea4f59377f61f4b6a2c91a')
       .then(response => {
         this.setState({ forecast: response.data.list, location: response.data });
       })
